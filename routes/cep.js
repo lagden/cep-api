@@ -5,13 +5,17 @@ var express = require('express'),
     router = express.Router(),
     unqlite = require('unqlite'),
     correio = require('../lib/correio'),
-    db = new unqlite.Database(path.join(__dirname, '../db/cep.db')),
     cepRegex = /^(\d{5})\-?(\d{3})$/;
 
-var closeDB = function(next) {
+var DB = unqlite.Database,
+    dbFile = path.join(__dirname, '../db/cep.db');
+
+var closeDB = function(db) {
     db.close(function(err) {
         if (err)
             console.log('db.close', err);
+        else
+            console.log('db.close', 'fechadoo...');
     });
 }
 
@@ -26,20 +30,26 @@ router.get('/', function(req, res) {
 });
 
 router.get('/:cep', function(req, res, next) {
+    console.log('-------------------');
+
     var rawcep,
-        cep;
+        cep,
+        db;
 
     cep = req.params.cep;
     if (cepRegex.test(cep)) {
+
         rawcep = cep.split('-').join('');
 
         // Abre conexao com o banco
+        db = new DB(dbFile);
         db.open(unqlite.OPEN_CREATE, function(err) {
             if (err) {
-                closeDB();
-                next(err);
+                closeDB(db);
+                next(new Error('unqlite open'));
             } else {
-                // Localiza o cep
+                console.log('db.open', 'abriuuu...');
+                // Localiza o cep no banco
                 db.fetch(rawcep, function(err, k, v) {
                     // Se não achou então...
                     if (err) {
@@ -54,11 +64,12 @@ router.get('/:cep', function(req, res, next) {
                                     else
                                         console.log('db.store - gravou', k);
 
-                                    closeDB();
+                                    closeDB(db);
                                     respostaFinal(res, data, true);
                                 });
                             // senão a consulta #fail
                             } else {
+                                closeDB(db);
                                 respostaFinal(res, {
                                     "msg": "cep não encontrado"
                                 });
@@ -67,7 +78,7 @@ router.get('/:cep', function(req, res, next) {
                     // achou!!
                     } else {
                         console.log('achou no banco...');
-                        closeDB();
+                        closeDB(db);
                         respostaFinal(res, JSON.parse(v), true);
                     }
                 });
