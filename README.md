@@ -4,6 +4,7 @@ CEP API v1
  - [API](http://api-cep.herokuapp.com/)
  - [Documentação](http://docs.cepapiv1.apiary.io/)
  - [Source](https://github.com/lagden/cep-api)
+ - [Exemplo](http://codepen.io/lagden/pen/fArzv?editors=101)
 
 ## Instalação
 
