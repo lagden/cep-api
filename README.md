@@ -1,4 +1,4 @@
-cep-api
-=======
+CEP API v1
+==========
 
-Consulta de CEP
+[Documentação da API](http://docs.cepapiv1.apiary.io/)
