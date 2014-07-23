@@ -27,6 +27,10 @@ A `API` na verdade é um parse do resultado da página de consulta de cep do sit
 
 - Se a página do correio for alterada ou estiver fora do ar, a `API` só irá funcionar com os dados que foram armazenados no banco de dados
 
+## TODO
+
+- Expirar CEP para que tenha uma atualização constante.
+
 ## Author
 
 [Thiago Lagden](http://lagden.in)

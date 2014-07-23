@@ -58,6 +58,8 @@ router.get('/:cep', function(req, res, next) {
                         correio(rawcep, function(err, data) {
                             // Se achou então grava no banco...
                             if (data) {
+                                data['cache'] = Date.now();
+                                console.log(data);
                                 db.store(rawcep, JSON.stringify(data), function(err, k, v) {
                                     if (err)
                                         console.log('db.store', err);
