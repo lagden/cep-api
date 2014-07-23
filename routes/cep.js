@@ -26,7 +26,7 @@ var respostaFinal = function(res, data, success) {
 }
 
 router.get('/', function(req, res) {
-    res.send('<pre>Como usar: /cep/09715-295 ou /cep/09715295</pre>');
+    res.send('<pre>Como usar: \n\n - http://api-cep.herokuapp.com/cep/09715-295\n - http://api-cep.herokuapp.com/cep/09715295</pre>');
 });
 
 router.get('/:cep', function(req, res, next) {
