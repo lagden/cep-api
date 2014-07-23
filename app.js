@@ -23,6 +23,16 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// CORS
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, X-Request-With, X-Requested-By');
+    res.header('Access-Control-Allow-Methods', 'POST, GET');
+    res.header('Access-Control-Max-Age', 1000);
+    next();
+});
+
+// Routes
 app.use('/', routes);
 app.use('/cep', cep);
 
@@ -55,14 +65,6 @@ app.use(function(err, req, res, next) {
         message: err.message,
         error: {}
     });
-});
-
-// CORS
-app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'X-Requested-With');
-    // res.header('Access-Control-Allow-Methods', 'GET');
-    next();
 });
 
 module.exports = app;
