@@ -1,14 +1,14 @@
 'use strict';
 
-var express = require('express');
-var path = require('path');
-var favicon = require('static-favicon');
-var logger = require('morgan');
+var express      = require('express');
+var path         = require('path');
+var favicon      = require('static-favicon');
+var logger       = require('morgan');
 var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+var bodyParser   = require('body-parser');
 
-var routes = require('./routes/index');
-var cep = require('./routes/cep');
+var routes       = require('./routes/index');
+var cep          = require('./routes/cep');
 
 var app = express();
 

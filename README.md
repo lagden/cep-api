@@ -35,3 +35,7 @@ A `API` na verdade é um parse do resultado da página de consulta de cep do sit
 ## Author
 
 [Thiago Lagden](http://lagden.in)
+
+## Contributors
+
+- [Jean Carlo Nascimento (Suissa)](https://github.com/suissa)
