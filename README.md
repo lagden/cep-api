@@ -18,7 +18,7 @@ CEP API v1
 
 ## Como funciona
 
-A `API` na verdade é um parse do resultado da página de consulta de cep do site dos correios. O resultado é armazenado em um banco de dados para que futuramente não tenha a necessidade de fazer o parse.
+A `API` na verdade é um parse do resultado da página de consulta de CEP do site dos correios. O resultado é armazenado em um banco de dados para que não tenha a necessidade de fazer uma nova consulta.
 
 ### Prós
 
