@@ -1,38 +1,49 @@
 'use strict';
 
-var express = require('express'),
-    path = require('path'),
-    router = express.Router(),
-    unqlite = require('unqlite'),
-    correio = require('../lib/correio'),
-    cepRegex = /^(\d{5})\-?(\d{3})$/;
+var correio = require('../lib/correio'),
+    db      = require('../models/cep');
 
-var DB = require('../models/cep');
-    
-
-var respostaFinal = function(res, data, success) {
+var resposta = function(res, data, success) {
+    console.log('---- end ----');
     success = success || false;
+    data = data || {};
     data['success'] = success;
     res.send(data);
-}
-var CEP  = { 
-
-    find: function(req, res, next){
-        var rawcep,
-            cep,
-            db;
-        cep = req.params.cep;
-        if (cepRegex.test(cep)) {
-            rawcep = cep.split('-').join('');
-            // Abre conexao com o banco
-            DB.find(res, rawcep);
-        } else {
-            respostaFinal(res, {
-                "msg": "cep inválido"
-            });
-        }
-
-    }
 };
 
-module.exports = CEP;
+var sedex = function(res, cep, data) {
+    if (data) {
+        data['cache'] = Date.now();
+        db.save(cep, JSON.stringify(data), function(err, k, v) {
+            if (err)
+                console.log('---- não salvou ----');
+
+            // Mesmo assim retorna o resultado da consulta
+            resposta(res, data, true);
+        });
+    } else
+        resposta(res, {
+            'msg': 'CEP não encontrado'
+        });
+};
+
+exports.consulta = function(req, res, next) {
+    console.log('---- init ----');
+    var cep = req.params.cep,
+        rawcep;
+
+    if (/^(\d{5})\-?(\d{3})$/.test(cep)) {
+        rawcep = cep.split('-').join('');
+        db.find(rawcep, function(err, data) {
+            if (data)
+                resposta(res, JSON.parse(data), true);
+            else
+                correio(rawcep, function(err, data) {
+                    sedex(res, rawcep, data);
+                });
+        });
+    } else
+        resposta(res, {
+            'msg': 'CEP inválido'
+        });
+};
