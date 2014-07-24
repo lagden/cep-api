@@ -33,7 +33,7 @@ A `API` na verdade é um parse do resultado da página de consulta de cep do sit
 - Cache inteligente para que tenha uma atualização constante
     - Verifica a data de validade do CEP
     - Faz uma nova consulta nos correios
-    - Se retornar dados e os dados for diferente do atual
+    - Se retornar dados e os dados forem diferentes do atual
     - Então atualiza o CEP
     - Senão atualiza a data de validade do CEP
 
