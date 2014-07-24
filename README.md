@@ -30,7 +30,14 @@ A `API` na verdade é um parse do resultado da página de consulta de cep do sit
 
 ## TODO
 
-- Expirar CEP para que tenha uma atualização constante.
+- Cache inteligente para que tenha uma atualização constante
+    - Verifica a data de validade do CEP
+    - Faz uma nova consulta nos correios
+    - Se retornar dados e os dados for diferente do atual
+    - Então atualiza o CEP
+    - Senão atualiza a data de validade do CEP
+
+- Robo para preencher o banco com o range de CEPs do Brasil
 
 ## Author
 
