@@ -2,7 +2,7 @@
 db/*.db
 
 # Logs
-logs
+logs/*.log*
 *.log
 
 # Runtime data
