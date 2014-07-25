@@ -30,14 +30,13 @@ A `API` na verdade é um parse do resultado da página de consulta de CEP do sit
 
 ## TODO
 
-- Cache inteligente para que tenha uma atualização constante
-    - Verifica a data de validade do CEP
-    - Faz uma nova consulta nos correios
-    - Se retornar dados e os dados forem diferentes do atual
-    - Então atualiza o CEP
-    - Senão atualiza a data de validade do CEP
-
-- Robo para preencher o banco com o range de CEPs do Brasil
+- [x] Cache inteligente para que tenha uma atualização constante
+    - [x] Verifica a data de validade do CEP
+    - [x] Faz uma nova consulta nos correios
+    - [x] Se retornar dados e os dados forem diferentes do atual
+    - [x] Então atualiza o CEP
+    - [x] Senão atualiza a data de validade do CEP
+- [ ] Robo para preencher o banco com o range de CEPs do Brasil
 
 ## Author
 
