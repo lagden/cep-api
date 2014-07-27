@@ -1,5 +1,5 @@
-CEP API v1
-==========
+CEP API
+=======
 
  - [API](http://api-cep.herokuapp.com/)
  - [Documentação](http://docs.cepapiv1.apiary.io/)
@@ -20,11 +20,11 @@ CEP API v1
 
 A `API` na verdade é um parse do resultado da página de consulta de CEP do site dos correios. O resultado é armazenado em um banco de dados para que não tenha a necessidade de fazer uma nova consulta.
 
-### Prós
+### Boa notícia
 
 - Os dados sempre atualizados
 
-### Contras
+### Má notícia
 
 - Se a página do correio for alterada ou estiver fora do ar, a `API` funcionará apenas com os dados que foram armazenados no banco de dados
 
