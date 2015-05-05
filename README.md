@@ -35,7 +35,7 @@ A `API` na verdade é um parse do resultado da página de consulta de CEP do sit
     - [x] Se expirou então faz uma nova consulta nos correios
     - [x] Se retornar dados e os dados forem diferentes do atual então atualiza o CEP
     - [x] Do contrário atualiza apenas a data de validade do CEP
-- [ ] Robo para preencher o banco com o range de CEPs do Brasil
+- [ ] Robo para preencher o banco com a faixas de CEP do Brasil `01000-000` até `99999-999`
 
 ## Author
 
