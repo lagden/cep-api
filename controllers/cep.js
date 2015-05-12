@@ -1,6 +1,6 @@
 'use strict';
 
-var correio = require('../lib/correio'),
+var correio = require('io-cep'),
     db = require('../models/cep'),
     loggy = require('../lib/log');
 
