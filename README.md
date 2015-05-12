@@ -1,7 +1,6 @@
 CEP API
 =======
 
- - [API](http://api-cep.herokuapp.com/)
  - [Documentação](http://docs.cepapiv1.apiary.io/)
  - [Source](https://github.com/lagden/cep-api)
  - [Exemplo](http://codepen.io/lagden/pen/fArzv?editors=101)
@@ -10,7 +9,7 @@ CEP API
 
     git clone https://github.com/lagden/cep-api.git
     cd cep-api
-    npm install
+    npm i -d
 
 ## Executando
 
@@ -27,6 +26,7 @@ A `API` na verdade é um parse do resultado da página de consulta de CEP do sit
 ### Má notícia
 
 - Se a página do correio for alterada ou estiver fora do ar, a `API` funcionará apenas com os dados que foram armazenados no banco de dados
+- Bem que a notícia não é tão má! Basta atualizar a [lib principal](https://github.com/lagden/io-cep)
 
 ## TODO
 
@@ -44,3 +44,4 @@ A `API` na verdade é um parse do resultado da página de consulta de CEP do sit
 ## Contributors
 
 - [Jean Carlo Nascimento (Suissa)](https://github.com/suissa)
+- [Gabriel Pedro](https://github.com/gpedro)
