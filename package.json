@@ -17,13 +17,13 @@
   },
   "download": "https://github.com/lagden/cep-api/releases",
   "dependencies": {
-    "async": "^0.9.0",
-    "cors": "^2.6.0",
-    "express": "^4.12.3",
-    "io-cep": "^0.1.3",
-    "jade": "^1.9.2",
-    "morgan": "^1.5.3",
-    "serve-favicon": "^2.2.0",
-    "unqlite": "^0.3.1"
+    "async": "~0.9.0",
+    "cors": "~2.6.0",
+    "express": "~4.12.3",
+    "io-cep": "~0.1.3",
+    "jade": "~1.9.2",
+    "morgan": "~1.5.3",
+    "serve-favicon": "~2.2.0",
+    "unqlite": "~0.3.1"
   }
 }
