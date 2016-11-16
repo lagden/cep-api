@@ -1,5 +1,9 @@
-CEP API
-=======
+# CEP API - DEPRECATED
+
+**Esse projeto está obsoleto!**  
+**Utilizem o [CEP API Koa](https://github.com/lagden/cep-koa-api)**
+
+---
 
  - [Documentação](http://docs.cepapiv1.apiary.io/)
  - [Source](https://github.com/lagden/cep-api)
