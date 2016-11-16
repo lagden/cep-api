@@ -6,7 +6,6 @@
 ---
 
  - [Documentação](http://docs.cepapiv1.apiary.io/)
- - [Source](https://github.com/lagden/cep-api)
  - [Exemplo](http://codepen.io/lagden/pen/fArzv?editors=101)
 
 ## Instalação
